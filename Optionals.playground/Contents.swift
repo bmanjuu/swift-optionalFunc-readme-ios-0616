@@ -10,7 +10,7 @@ fruits = []
 //brokenFirstItem(fruits)  // Breaks :-(
 
 
-
+//by using an optional, you avoid having the error/your code break!
 func firstItem(items: [String]) -> String? {
     if items.isEmpty {
         return nil
@@ -21,6 +21,7 @@ func firstItem(items: [String]) -> String? {
 fruits = ["apple", "banana", "grape"]
 firstItem(fruits)
 
+//unwrapping the optional
 if let fruit = firstItem(fruits) {
     print("The first fruit is \(fruit)")
 } else {
@@ -36,13 +37,13 @@ if let fruit = firstItem(fruits) {
     print("There are no fruits!")
 }
 
-
+//OPTIONAL PARAMETERS FOR FUNCTIONS!
 func produceFullName(withFirstName firstName: String, middleName: String?, lastName: String) -> String {
     var name = firstName
     if let middleName = middleName {
         name = "\(name) \(middleName)"
     }
-    name = "\(name) \(lastName)"
+    name = "\(name) \(lastName)" // the \(name) would either just refer to the firstName or middleName, depending if there was a middleName. and then lastName is appended 
     return name
 }
 
